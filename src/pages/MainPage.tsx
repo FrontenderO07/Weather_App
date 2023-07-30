@@ -6,12 +6,13 @@ type ArrayType = {
 };
 const MainPage = () => {
   const [array, setArray] = useState<ArrayType[]>([]);
+  const [num, setNum] = useState<number>(1);
   const clickHandler = () => {
-    let num = 1;
+    setNum((prev) => prev + 1);
     const newItem: ArrayType = {
       item: 'Item',
       id: Math.random(),
-      number: (num = num + 1)
+      number: num
     };
     setArray([...array, newItem]);
   };
